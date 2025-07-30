@@ -4,20 +4,34 @@ for i in range(cantidad):
     print(f"\nProducto {i+1}")
     while True:
         codigo = input("Ingrese codigo del producto: ")
-        nombre = input("Ingrese nombre del producto: ")
-        precio = float(input("Ingrese precio del producto: "))
-        stock = int(input("Ingrese cantidad de stock del producto: "))
-        talla = input("Ingrese la talla del producto: ").upper()
         if codigo in inventario:
-            print("Codigo ya existente")
-            continue
+            print("Codigo ya existente. Ingrese otro codigo")
+        else:
+            break
+    nombre = input("Ingrese nombre del producto: ")
+    categoria= input("Ingrese categoria del producto: ")
+    while True:
+        precio = float(input("Ingrese precio del producto: "))
         if precio <=0:
-            print("Precio invalido")
-            continue
+            print("El precio no puede ser negativo ni cero.")
+        else:
+            break
+    while True:
+        stock = int(input("Ingrese cantidad de stock del producto: "))
         if stock <=0:
-            print("Cantidad invalida")
-            continue
+            print("La cantidad del producto no puede ser negativa ni cero")
+        else:
+            break
+    while True:
+        talla = input("Ingrese la talla del producto: ").upper()
         if talla not in ["S","M","L","XL"]:
             print("Talla invalida")
-            continue
-        break
+        else:
+            break
+    inventario[codigo]= {
+        "Nombre": nombre,
+        "Categoria": categoria,
+        "Precio": precio,
+        "Stock": stock,
+        "Talla": talla
+    }
