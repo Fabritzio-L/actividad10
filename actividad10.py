@@ -9,7 +9,12 @@ for i in range(cantidad):
         else:
             break
     nombre = input("Ingrese nombre del producto: ")
-    categoria= input("Ingrese categoria del producto: ")
+    while True:
+        categoria= input("Ingrese categoria del producto: ").lower()
+        if categoria not in ["hombre","mujer","niño"]:
+            print("Categoria invalida")
+        else:
+            break
     while True:
         precio = float(input("Ingrese precio del producto: "))
         if precio <=0:
@@ -56,4 +61,17 @@ else:
 total =0
 for producto in inventario.values():
     total += producto["precio"]*producto["stock"]
-print(f"\nEl total del inventario es de Q{total}")
+hombre = 0
+mujer = 0
+niño = 0
+for prod in inventario.values():
+    if prod["categoria"] == "hombre":
+        hombre += 1
+    elif prod["categoria"] == "mujer":
+        mujer += 1
+    elif prod["categoria"] == "niño":
+        niño += 1
+print("\nCantidad de productos por categoría:")
+print(f"Hombre: {hombre} productos")
+print(f"Mujer: {mujer} productos")
+print(f"Niño: {niño} productos")
