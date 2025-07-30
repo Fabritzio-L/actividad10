@@ -53,3 +53,7 @@ if buscado in inventario:
     print(f"Talla: {inventario[buscado]["talla"]}")
 else:
     print("Codigo de producto no encontrado.")
+total =0
+for producto in inventario.values():
+    total += producto["precio"]*producto["stock"]
+print(f"\nEl total del inventario es de Q{total}")
