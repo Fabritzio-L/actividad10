@@ -43,3 +43,13 @@ for codigo, datos in inventario.items():
     print(f"Precio: {datos["precio"]}")
     print(f"Stock: {datos["stock"]}")
     print(f"Talla: {datos["talla"]}")
+print("\nBusqueda de producto")
+buscado = input("Ingrese el codigo del producto a buscar: ")
+if buscado in inventario:
+    print(f"Nombre: {inventario[buscado]["nombre"]}")
+    print(f"Categoria: {inventario[buscado]["categoria"]}")
+    print(f"Precio: {inventario[buscado]["precio"]}")
+    print(f"Stock: {inventario[buscado]["stock"]}")
+    print(f"Talla: {inventario[buscado]["talla"]}")
+else:
+    print("Codigo de producto no encontrado.")
