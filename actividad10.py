@@ -29,9 +29,17 @@ for i in range(cantidad):
         else:
             break
     inventario[codigo]= {
-        "Nombre": nombre,
-        "Categoria": categoria,
-        "Precio": precio,
-        "Stock": stock,
-        "Talla": talla
+        "nombre": nombre,
+        "categoria": categoria,
+        "precio": precio,
+        "stock": stock,
+        "talla": talla
     }
+print("\nProductos registrados:")
+for codigo, datos in inventario.items():
+    print(f"\nCodigo: {codigo}")
+    print(f"Nombre: {datos["nombre"]}")
+    print(f"Categoria: {datos["categoria"]}")
+    print(f"Precio: {datos["precio"]}")
+    print(f"Stock: {datos["stock"]}")
+    print(f"Talla: {datos["talla"]}")
